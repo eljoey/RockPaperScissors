@@ -84,7 +84,7 @@ function newResultLine(string) {
     const results = document.createElement('p')
     const paragraphText = document.createTextNode(string);
     results.appendChild(paragraphText);
-    document.querySelector('.results').appendChild(results).scrollTop;
+    document.querySelector('.results').appendChild(results);
     
 }
 
