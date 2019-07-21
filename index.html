@@ -3,98 +3,42 @@
 <head>
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-  <p>Open up the browser console (f12) and type 'game()' to play!</p>
-  <script>
+  <div class="container">
+    <div class="header">
+        <h2>Rock Paper Scissors Game</h2>
+    </div>      
+    <div class="mainBody">
+        <div class="instructions">
+            <p>Instructions:</p>
+            <ul>
+                <li>Click start game to begin.</li>
+                <li>Standard rules apply.</li>
+                <li>First to 5 wins.</li>
+            </ul>
+        </div>
+        <div class="resultsContainer">
+          <div class="results"></div>
+        </div>
+        <div class="scoreboard">
+            <p>Current Score:</p>
+            <p>You: <span class="playerScore">0</span></p>
+            <p>Computer: <span class="computerScore">0</span></p>
+        </div>
+    </div>
+    <div class="buttons">
+        <input type="button" value="Start Game" id="start" onclick="startGame()">
+        <input type="button" value="Rock" id="rock" onclick="playRound('rock');">
+        <input type="button" value="Paper" id="paper" onclick="playRound('paper')">
+        <input type="button" value="Scissors" id="scissors" onclick="playRound('scissors')">
+    </div>
 
-// Makes computers selection.  
-    function computerPlay() {
-        let randomPick = Math.floor(Math.random()*3)+1;
-        if (randomPick == 1) {
-            return "Rock";
-        } else if (randomPick == 2) {
-            return "Paper";
-        } else {
-            return "Scissors";
-        }
-    }
+  </div>
 
-//Prompts for players selection when called.
-    function playerPick() {
-        return prompt("What is your selection(Rock, Paper or Scissors)");
-    }
-
-//Simulates one round of play   
-    function playRound(playerSelection, computerSelection) {
-        playerselection = playerPick().toLowerCase();
-        computerSelection = computerPlay().toLowerCase();
-
-        if(playerselection == "rock"){
-            if(computerSelection == "paper") {
-                computerWins += 1;
-                return "You Lose! Paper beats Rock!";
-            } else if (computerSelection == "scissors") {
-                playerWins += 1;
-                return "You Win! Rock beats Scissors";
-            } else {
-                ties +=1;
-                return "You Tie! The Computer also chose Rock";
-            }
-        } else if (playerselection == "paper") {
-            if(computerSelection == "scissors") {
-                computerWins +=1;
-                return "You Lose! Scissors beats Rock!";
-            } else if (computerSelection == "rock") {
-                playerWins +=1;
-                return "You Win! Paper beats Rock";
-            } else {
-                ties +=1;
-                return "You Tie! The Computer also chose Paper";
-            }
-        } else if (playerselection == "scissors"){
-            if(computerSelection == "rock") {
-                computerWins +=1;
-                return "You Lose! Rock beats Scissors!";
-            } else if (computerSelection == "paper") {
-                playerWins +=1;
-                return "You Win! Scissors beats Paper";
-            } else {
-                ties +=1;
-                return "You Tie! The Computer also chose Scissors";
-            }
-        }
-    }
-
-//Variables for results of game   
-    let playerWins = 0;
-    let computerWins = 0;
-    let ties = 0;
-
-//Simulates 5 rounds of play
-    function game() {    
-        let rounds = 1;
-        while (rounds <= 5) {
-            console.log("Round " + rounds + ": " + playRound());         
-            rounds +=1;
-        }
-        console.log(winner()); 
-    }
-
-//Determines winner based off results of play
-    function winner() {
-        if (playerWins > computerWins) {
-            return "Congratulations you beat the Computer!";
-        } else if (playerWins < computerWins) {
-            return "The Computer beat you :(";
-        } else {
-            return "You tied the Computer!";
-        }
-    }
-
-    
-
-
-  </script>
+  <script src="script.js" type="text/javascript"></script>
 </body>
 </html>

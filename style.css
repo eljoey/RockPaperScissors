@@ -1,0 +1,44 @@
+body {
+    padding: 5vh 15vw 0 15vw;
+    font-family: sans-serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.mainBody {
+    display: flex;
+    flex: 1;
+    height: 40vh;
+}
+
+.instructions {
+    border: 1px solid black;
+    width: 15vw;
+}
+.resultsContainer{
+    border: 1px solid black;
+    font-size: 14px;
+    width: 45vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.results {
+    max-width: 45vw;
+}
+
+.scoreboard {
+    width: 15vw;
+    border: 1px solid black;
+}
+
+p {
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+}
